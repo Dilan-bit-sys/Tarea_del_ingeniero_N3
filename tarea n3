@@ -1,3 +1,4 @@
+
 class Vector2D {
     private double x;  
     private double y;  
@@ -54,4 +55,3 @@ class Vector2D {
         Vector2D divisionEscalar = a.dividir(escalar);
         System.out.println("a / r = " + divisionEscalar);
     }
-}
