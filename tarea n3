@@ -1,0 +1,57 @@
+class Vector2D {
+    private double x;  
+    private double y;  
+    public Vector2D(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public Vector2D sumar(Vector2D otro) {
+        return new Vector2D(this.x + otro.x, this.y + otro.y);
+    }
+
+    public Vector2D restar(Vector2D otro) {
+        return new Vector2D(this.x - otro.x, this.y - otro.y);
+    }
+
+    public Vector2D multiplicar(double escalar) {
+        return new Vector2D(this.x * escalar, this.y * escalar);
+    }
+
+    public Vector2D dividir(double escalar) {
+        if (escalar == 0) {
+            throw new ArithmeticException("No se puede dividir entre cero.");
+        }
+        return new Vector2D(this.x / escalar, this.y / escalar);
+    }
+
+    public String toString() {
+        return this.x + "i + " + this.y + "j";
+    }
+
+    public static void main(String[] args) {
+        Vector2D a = new Vector2D(3, 4);
+        Vector2D b = new Vector2D(1, 2);
+
+        Vector2D suma = a.sumar(b);
+        System.out.println("a + b = " + suma);
+
+        Vector2D resta = a.restar(b);
+        System.out.println("a - b = " + resta);
+
+        double escalar = 2;
+        Vector2D multiplicacionEscalar = a.multiplicar(escalar);
+        System.out.println("r * a = " + multiplicacionEscalar);
+
+        Vector2D divisionEscalar = a.dividir(escalar);
+        System.out.println("a / r = " + divisionEscalar);
+    }
+}
